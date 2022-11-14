@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+        Employee Profile
+    </div>
+    <div class="card-body">
+      <form class="row g-3" [formGroup]="profileForm" (submit)="onSubmit()">
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Name</label>
+          <input type="text" class="form-control" id="inputPassword4"
+           formControlName="name" >
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="username" class="form-control" id="inputEmail4"
+          formControlName="username" readonly>
+        </div>
+  
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" 
+          formControlName="address">
+        </div>
+  
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Job Title</label>
+          <input type="text" class="form-control" id="inputPassword4"
+           formControlName="userType"  readonly>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">contact</label>
+          <input type="email" class="form-control" id="inputEmail4"
+          formControlName="contact"  >
+        </div>
+        <div class="col-12">
+          <input type="submit" class="btn btn-primary" value="Update Profile">
+        </div>
+      </form>
+    </div>
+  </div>

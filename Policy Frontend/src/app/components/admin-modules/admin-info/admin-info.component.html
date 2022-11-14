@@ -1,0 +1,27 @@
+<section>
+    <div class="card">
+        <div class="avatar">
+            <img class="card-img-top" src="../../../../assets/admin-image.png"
+                alt="Card image cap">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{admin?.name | uppercase}}</h5>
+            <p class="card-text">Welcome to PoliSEA
+
+            </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">Registered Email:
+
+                <strong> {{admin?.email}}</strong>
+            </li>
+        </ul>
+
+        <div class="card-body">
+            <a (click)="logout()" href="Javascript:void(0)" class="card-link">Log Out</a>
+            <a routerLink="support" class="card-link">Support</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+      Add POlicy
+    </div>
+    <div class="card-body">
+      <div class="alert alert-info" role="alert" *ngIf="msg">
+        {{msg}}
+     </div>
+    <form [formGroup]="policyForm" (submit)="onPolicySubmit()">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">name:</label>
+        <input type="text" class="form-control" formControlName="name" id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">category:</label>
+        <input type="text" class="form-control" formControlName="category"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">startDate:</label>
+        <input type="text" class="form-control" formControlName="startDate"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">duration:</label>
+        <input type="number" class="form-control" formControlName="duration"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">initialDeposit:</label>
+        <input type="number" class="form-control" formControlName="initialDeposit"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">userType:</label>
+        <input type="text" class="form-control" formControlName="userType"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">termPerYear:</label>
+        <input type="number" class="form-control" formControlName="termPerYear"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">termAmount:</label>
+        <input type="number" class="form-control" formControlName="termAmount"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">rateOfInterest:</label>
+        <input type="number" class="form-control" formControlName="rateOfInterest"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">maturityAmount:</label>
+        <input type="number" class="form-control" formControlName="maturityAmount"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">status:</label>
+        <input type="text" class="form-control" formControlName="status"  id="exampleFormControlInput1" placeholder="Select date">
+      </div>
+      
+      <div class="mb-3">
+        <input type="submit" value="Add Policy" class="btn btn-primary" [disabled]="!policyForm.valid"/>
+    </div>
+  </form>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+
+<div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Available Life Insurances</h1>
+    <h4 class="mb-3">Purchase best <b> Life Insurance</b> and secure <b> Future</b> !</h4>
+<div class="container py-5">
+    <div class="row text-center text-white mb-5">
+       
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <li class="list-group-item" *ngFor="let p of policy">
+                    <!-- Custom content-->
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-5">
+                        <div class="media-body order-2 order-lg-1">
+                            <h5 class="mt-0 font-weight-bold mb-2">{{p.name}}</h5>
+                            <p class="font-italic text-muted mb-0 ">By {{p.vendorName}}</p>
+                            <p class="font-italic text-muted mb-0 small">Initial Deposit :₹{{p.initialDeposit}}</p>
+                            <p class="font-italic text-muted mb-0 small">ROI :{{p.rateOfInterest}}%</p>
+                            <p class="font-italic text-muted mb-0 small">Terms per year :{{p.termPerYear}}</p>
+                            <p class="font-italic text-muted mb-0 small">Maturity Amount :₹{{p.maturityAmount+5000}}</p>
+                           
+
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2">For age [18-30] ₹{{p.slab1}} premium only!</h6>
+                                <h6 class="font-weight-bold my-2">For age [31-40] ₹{{p.slab2}} premium only!</h6>
+                                <h6 class="font-weight-bold my-2">For age [41-50] ₹{{p.slab3}} premium only!</h6>
+                                <h6 class="font-weight-bold my-2">For age [50+] ₹{{p.slab4}} premium only!</h6>
+                                <br/>
+                                
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                   
+                                </ul>
+                            </div>
+                            <a (click)="onClick(p.id)" class="btn btn-primary">Buy</a>
+                        </div>
+                        
+                      
+                      
+                    
+                    </div> <!-- End -->
+                </li> <!-- End -->
+
+
+            </ul> <!-- End -->
+        </div>
+    </div>
+</div>
+

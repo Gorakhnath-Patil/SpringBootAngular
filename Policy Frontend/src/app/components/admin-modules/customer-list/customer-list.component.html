@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+     Customer Details
+    </div>
+    <div class="card-body">
+      <div class="alert alert-secondary" role="alert" *ngIf="msg">
+         {{msg}}
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Contact No</th>
+            <th scope="col">Pan No</th>
+            <th scope="col">Employer Type</th>
+            <th scope="col">Employer Name</th>
+            <th></th>            
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let c of customer;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td> {{c.firstName}} </td>
+            <td> {{c.lastName}} </td>
+            <td> {{c.dob}} </td>
+            <td> {{c.email}}</td>
+            <td> {{c.salary}}</td>
+            <td>{{c.contactNo}}</td>
+            <td> {{c.panNo}} </td>
+            <td> {{c.employerType}} </td>
+            <td> {{c.employerName}} </td>
+            <td><button value="showAlert" routerLink="/admin/revoke" class="btn btn-danger btn-sm"><span class="btn-text"><b>Revoke Customer</b></span></button></td>
+            
+        </tbody>
+      </table>
+    </div>
+  </div>

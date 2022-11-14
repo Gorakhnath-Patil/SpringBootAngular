@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <div class="card col-lg-7">
+     <div class="card-header">
+       Admin Sign up
+     </div>
+ 
+     <div class="card-body">
+       <div class="alert alert-info" role="alert" *ngIf="msg">
+          {{msg}} <button class="btn btn-primary btn-sm" routerLink="/login">Login</button>
+       </div>
+    <form [formGroup]="adminloginform" (submit)="onFormSubmit()">
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Name</label>
+       <input type="text" formControlName="name" class="form-control"  placeholder="Enter your name">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="adminloginform.controls['name'].touched && adminloginform.controls['name'].invalid">
+        <span *ngIf="adminloginform.controls['name'].errors['required']">Name is required</span>
+        <span *ngIf="adminloginform.controls['name'].errors['pattern']">Enter valid name</span>
+     </div>
+
+
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Email address</label>
+       <input type="email" formControlName="email" class="form-control"  placeholder="name@example.com">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="adminloginform.controls['email'].touched && adminloginform.controls['email'].invalid">
+        <span *ngIf="adminloginform.controls['email'].errors['required']">Email is required</span>
+        <span *ngIf="adminloginform.controls['email'].errors['email']">Enter valid Email</span>
+      </div>
+
+
+
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Password</label>
+       <input type="password" formControlName="password" class="form-control" placeholder="Enter your password">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="adminloginform.controls['password'].touched && adminloginform.controls['password'].invalid">
+        <span *ngIf="adminloginform.controls['password'].errors['required']">Password is required</span>
+        <span *ngIf="adminloginform.controls['password'].errors['minlength']">Password should be atleast 4 chars</span>
+     </div>
+     <div class="mb-3 col-lg-12">
+       <input type="submit" class="btn btn-primary col-lg-12" value="Sign Up"
+       [disabled]="!adminloginform.valid">
+     </div>
+    </form>
+    
+    <div>Not A Admin: <a routerLink="/customer-signup"> Customer Signup</a>
+      <br/>
+      <a routerLink="/vendor-signup"> Vendor Signup</a>
+    </div>
+
+    </div>
+    </div>
+ </div>

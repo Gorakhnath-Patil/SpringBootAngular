@@ -1,0 +1,27 @@
+<div class="card"  >
+    <div class="avatar">
+        <img class="card-img-top" src="https://s.gravatar.com/avatar/34fce8ee32f3da1e0448?s=200" alt="Card image cap">
+    </div>
+  
+    <div class="card-body">
+      <h5 class="card-title">{{vendor?.name}}</h5>
+      <p class="card-text">Welcome to PoliSEA portal
+  
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Contact
+        <strong>{{vendor?.contact}}</strong>
+      </li>
+      <li class="list-group-item">Address:
+        <strong>{{vendor?.address | lowercase}}</strong>
+      </li>
+      <li class="list-group-item">Role:
+        <strong> {{vendor?.userType}}</strong>
+      </li>
+    </ul>
+    <div class="card-body">
+      <a (click)="logout()" href="Javascript:void(0)" class="card-link">Log Out</a>
+      <a routerLink="support" class="card-link">Support</a>
+    </div>
+  </div>

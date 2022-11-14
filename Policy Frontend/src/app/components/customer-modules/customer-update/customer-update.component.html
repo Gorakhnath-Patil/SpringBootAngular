@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-body">
+            <div class="alert alert-info" role="alert" *ngIf="msg">
+               {{msg}}
+            </div>
+     
+        <form class="row g-3" [formGroup]="updateForm" (submit)="onSubmit()">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">First name</label>
+                <input type="text" class="form-control" id="inputEmail4" formControlName="firstName">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="inputEmail4" formControlName="lastName">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="inputEmail4" formControlName="dob">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Salary</label>
+                <input type="number" class="form-control" id="inputEmail4" formControlName="salary">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email ID</label>
+                <input type="text" class="form-control" id="inputEmail4" formControlName="email" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Contact</label>
+                <input type="number" class="form-control" id="inputEmail4" formControlName="contactNo" >
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Age</label>
+                <input type="number" class="form-control" id="inputEmail4" formControlName="age" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Pan Number</label>
+                <input type="text" class="form-control" id="inputEmail4" formControlName="panNo">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="address">
+            </div>
+           
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary" value="Update Profile">
+            </div>
+        </form>
+    </div>
+</div>

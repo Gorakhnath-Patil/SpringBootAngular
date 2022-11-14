@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+      Pending Policies of Vendors
+    </div>
+    <div class="card-body">
+      <div class="alert alert-secondary" role="alert" *ngIf="msg">
+         {{msg}}
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Status</th>
+            <th scope="col">User Type </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let p of policy; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td> {{p.name}} </td>
+            <td> {{p.category}} </td>
+            <td> {{p.status}} </td>
+            <td> {{p.duration}} </td>
+            <td>{{p.userType}} </td>
+              <td> <button (click)="onStatusUpdate(p.id, 'APPROVED')" class="btn btn-primary btn-sm"><span class="btn-text"><b>Approve</b></span></button>
+                &nbsp;
+                <button (click)="onStatusUpdate(p.id, 'DENIED')" class="btn btn-danger btn-sm"><span class="btn-text"><b> Deny</b></span></button>
+              </td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </div>

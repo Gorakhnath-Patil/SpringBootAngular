@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <div class="card col-lg-7">
+     <div class="card-header">
+       Sign up
+     </div>
+ 
+     <div class="card-body">
+       <div class="alert alert-info" role="alert" *ngIf="msg">
+          {{msg}}
+          <button class="btn btn-primary btn-sm" routerLink="/login">login</button>
+       </div>
+    <form [formGroup]="vendorloginForm" (submit)="onFormSubmit()">
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Name</label>
+       <input type="text" formControlName="name" class="form-control"  placeholder="Enter your name">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="vendorloginForm.controls['name'].touched && vendorloginForm.controls['name'].invalid">
+        <span *ngIf="vendorloginForm.controls['name'].errors['required']">Name is required</span>
+        <span *ngIf="vendorloginForm.controls['name'].errors['pattern']">Enter valid name</span>
+     </div>
+
+
+     <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Contact</label>
+        <input type="text" formControlName="contact" class="form-control"  placeholder="Enter your contact">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="vendorloginForm.controls['contact'].touched && vendorloginForm.controls['contact'].invalid">
+         <span *ngIf="vendorloginForm.controls['contact'].errors['required']">contact is required</span>
+         <span *ngIf="vendorloginForm.controls['contact'].errors['pattern']">Enter valid contact</span>
+      </div>
+
+
+      <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">address</label>
+        <input type="text" formControlName="address" class="form-control"  placeholder="Enter your address">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="vendorloginForm.controls['address'].touched && vendorloginForm.controls['address'].invalid">
+         <span *ngIf="vendorloginForm.controls['address'].errors['required']">address is required</span>
+         <span *ngIf="vendorloginForm.controls['address'].errors['pattern']">Enter valid address</span>
+      </div>
+
+
+
+
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Email address</label>
+       <input type="email" formControlName="email" class="form-control"  placeholder="name@example.com">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="vendorloginForm.controls['email'].touched && vendorloginForm.controls['email'].invalid">
+        <span *ngIf="vendorloginForm.controls['email'].errors['required']">Email is required</span>
+        <span *ngIf="vendorloginForm.controls['email'].errors['email']">Enter valid Email</span>
+      </div>
+
+
+
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Password</label>
+       <input type="password" formControlName="password" class="form-control" placeholder="Enter your password">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="vendorloginForm.controls['password'].touched && vendorloginForm.controls['password'].invalid">
+        <span *ngIf="vendorloginForm.controls['password'].errors['required']">Password is required</span>
+        <span *ngIf="vendorloginForm.controls['password'].errors['minlength']">Password should be atleast 4 chars</span>
+     </div>
+     <div class="mb-3 col-lg-12">
+       <input type="submit" class="btn btn-primary col-lg-12" value="Sign Up"
+       [disabled]="!vendorloginForm.valid">
+     </div>
+    </form>
+    </div>
+    </div>
+ </div>

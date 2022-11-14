@@ -1,0 +1,141 @@
+<div class="container mt-3">
+    <div class="card col-lg-7">
+     <div class="card-header">
+       Sign up
+     </div>
+ 
+     <div class="card-body">
+       <div class="alert alert-info" role="alert" *ngIf="msg">
+          {{msg}}
+       </div>
+
+    <!--FirstName-->
+    <form [formGroup]="customerLoginForm" (submit)="onFormSubmit()">
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">First Name</label>
+       <input type="text" formControlName="firstName" class="form-control"  placeholder="Enter your First Name">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="customerLoginForm.controls['firstName'].touched && customerLoginForm.controls['firstName'].invalid">
+        <span *ngIf="customerLoginForm.controls['firstName'].errors['required']">Name is required</span>
+        <span *ngIf="customerLoginForm.controls['firstName'].errors['pattern']">Enter valid name</span>
+     </div>
+
+     <!--LastName-->
+     <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control"  placeholder="Enter your Last Name">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['lastName'].touched && customerLoginForm.controls['lastName'].invalid">
+         <span *ngIf="customerLoginForm.controls['lastName'].errors['required']">Name is required</span>
+         <span *ngIf="customerLoginForm.controls['lastName'].errors['pattern']">Enter valid name</span>
+      </div>
+
+      <!--Date of Birth-->
+      <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label"> Date of Birth</label>
+        <input type="text" formControlName="dob" class="form-control"  placeholder="Enter your Last Name">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['dob'].touched && customerLoginForm.controls['dob'].invalid">
+         <span *ngIf="customerLoginForm.controls['dob'].errors['required']">Date is required</span>
+         <!--<span *ngIf="customerLoginForm.controls['dob'].errors['pattern']">Enter valid Date</span>-->
+      </div>
+
+      <!--Salary-->
+      <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Salary</label>
+        <input type="text" formControlName="salary" class="form-control"  placeholder="Enter your Last Name">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['salary'].touched && customerLoginForm.controls['salary'].invalid">
+         <span *ngIf="customerLoginForm.controls['salary'].errors['required']">Salary is required</span>
+         <span *ngIf="customerLoginForm.controls['salary'].errors['pattern']">Enter valid Salary</span>
+      </div>
+
+      <!--Contact No-->
+     <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Contact</label>
+        <input type="text" formControlName="contactNo" class="form-control"  placeholder="Enter your contact no">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['contactNo'].touched && customerLoginForm.controls['contactNo'].invalid">
+         <span *ngIf="customerLoginForm.controls['contactNo'].errors['required']">contact is required</span>
+         <span *ngIf="customerLoginForm.controls['contactNo'].errors['pattern']">Enter valid contact</span>
+      </div>
+
+      <!--Address-->
+      <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Address</label>
+        <input type="text" formControlName="address" class="form-control"  placeholder="Enter your address">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['address'].touched && customerLoginForm.controls['address'].invalid">
+         <span *ngIf="customerLoginForm.controls['address'].errors['required']">address is required</span>
+         <span *ngIf="customerLoginForm.controls['address'].errors['pattern']">Enter valid address</span>
+      </div>
+
+      <!--Pan no-->
+      <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Pan No</label>
+        <input type="text" formControlName="panNo" class="form-control"  placeholder="Enter your panNo">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['panNo'].touched && customerLoginForm.controls['panNo'].invalid">
+         <span *ngIf="customerLoginForm.controls['panNo'].errors['required']">panNo is required</span>
+         <span *ngIf="customerLoginForm.controls['panNo'].errors['pattern']">Enter valid panNo</span>
+      </div>
+
+      <!--Email-->
+    <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Email address</label>
+       <input type="email" formControlName="email" class="form-control"  placeholder="name@example.com">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="customerLoginForm.controls['email'].touched && customerLoginForm.controls['email'].invalid">
+        <span *ngIf="customerLoginForm.controls['email'].errors['required']">Email is required</span>
+        <span *ngIf="customerLoginForm.controls['email'].errors['email']">Enter valid Email</span>
+      </div>
+
+      <!--Employer Type-->
+    <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Employer Type</label>
+        <input type="text" formControlName="employerType" class="form-control"  placeholder="employerType">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['employerType'].touched && customerLoginForm.controls['employerType'].invalid">
+         <span *ngIf="customerLoginForm.controls['employerType'].errors['required']">employerType is required</span>
+         <span *ngIf="customerLoginForm.controls['employerType'].errors['employerType']">Enter valid employerType</span>
+       </div>
+
+       <!--Employer Name-->
+    <div class="mb-3 col-lg-12">
+        <label for="exampleFormControlInput1" class="form-label">Employer Type</label>
+        <input type="text" formControlName="employerName" class="form-control"  placeholder="employerName">
+      </div>
+      <div class="alert alert-danger" role="alert"
+      *ngIf="customerLoginForm.controls['employerName'].touched && customerLoginForm.controls['employerName'].invalid">
+         <span *ngIf="customerLoginForm.controls['employerName'].errors['required']">employerName is required</span>
+         <span *ngIf="customerLoginForm.controls['employerName'].errors['employerName']">Enter valid employerName</span>
+       </div>
+
+      <!--Password-->
+     <div class="mb-3 col-lg-12">
+       <label for="exampleFormControlInput1" class="form-label">Password</label>
+       <input type="password" formControlName="password" class="form-control" placeholder="Enter your password">
+     </div>
+     <div class="alert alert-danger" role="alert"
+     *ngIf="customerLoginForm.controls['password'].touched && customerLoginForm.controls['password'].invalid">
+        <span *ngIf="customerLoginForm.controls['password'].errors['required']">Password is required</span>
+        <span *ngIf="customerLoginForm.controls['password'].errors['minlength']">Password should be atleast 4 chars</span>
+     </div>
+
+     <div class="mb-3 col-lg-12">
+       <input type="submit" class="btn btn-primary col-lg-12" value="Sign Up"
+       [disabled]="!customerLoginForm.valid">
+     </div>
+    </form>
+    </div>
+    </div>
+ </div>

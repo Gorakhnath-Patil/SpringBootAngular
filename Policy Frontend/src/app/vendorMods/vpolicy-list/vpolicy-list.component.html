@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+     Policy Details
+    </div>
+    <div class="card-body">
+      <div class="alert alert-secondary" role="alert" *ngIf="msg">
+         {{msg}}
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">Policy Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Duration[Y]</th>
+            <th scope="col">Initial Deposit</th>
+            <th scope="col">ROI</th>
+            <th scope="col">Maturity[INR]</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let l of policyInfo;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td> {{l.name}} </td>
+            <td> {{l.category}} </td>
+            <td> {{l.duration}} </td>
+            <td> {{l.initialDeposit}} Rs</td>
+            <td> {{l.rateOfInterest}} % </td>
+            <td> {{l.maturityAmount}} </td>
+            <td> {{l.status}} </td>
+            
+  
+        </tbody>
+      </table>
+    </div>
+  </div>

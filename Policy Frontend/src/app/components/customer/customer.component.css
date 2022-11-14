@@ -1,0 +1,17 @@
+.employee-box{
+    border: 1px solid ;
+    width: 15%;
+    float: left;
+    padding: 10px;
+    margin: 8px;
+  }
+  
+  .search{
+    padding: 8px;
+    margin: 5px;
+  }
+  
+  .sort{
+    padding: 8px;
+    margin: 5px;
+  }

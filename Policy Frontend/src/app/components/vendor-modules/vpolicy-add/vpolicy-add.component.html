@@ -1,0 +1,82 @@
+<div class="card">
+  <div class="card-header">
+    Add Policy
+  </div>
+  <div class="card-body">
+    <div class="alert alert-info" role="alert" *ngIf="msg">
+      {{msg}}
+    </div>
+    <form class="row g-3" [formGroup]="policyForm" (submit)="onPolicySubmit()">
+      <div class="col-md-6">
+        <label for="exampleFormControlInput1" class="form-label">Name :</label>
+        <input type="text" class="form-control" formControlName="name" id="exampleFormControlInput1"
+          placeholder="Enter Name">
+      </div>
+      <div class="col-md-6">
+        <label for="exampleFormControlInput1" class="form-label">Category :</label>
+        <select class="form-control" formControlName="category" placeholder="Select Category">
+          <option value="Health Insurance">Health Insurance</option>
+          <option value="Life Insurance">Life Insurance</option>
+        </select>
+      </div>
+
+
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Duration:</label>
+        <input type="number" class="form-control" formControlName="duration" id="exampleFormControlInput1"
+          placeholder="Enter No of years">
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Initial Deposit:</label>
+        <input type="number" class="form-control" formControlName="initialDeposit" id="exampleFormControlInput1"
+          placeholder="Enter Amount">
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Term Per Year:</label>
+        <select type="number" class="form-control" formControlName="termPerYear" id="exampleFormControlInput1"
+          placeholder="Select User type">
+          <option value="12">Monthly (12 Times an year)</option>
+          <option value="6">Alternate Month (6 Times an year)</option>
+          <option value="4">Quarterly (4 Times an year)</option>
+          <option value="3">Triannual(3 Times an year)</option>
+          <option value="2">Half-Yearly (2 Times an year)</option>
+          <option value="1">Yearly (1 Times an year)</option>
+
+        </select>
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Premium for Age[18-30]:</label>
+        <input type="number" class="form-control" formControlName="slab1" id="exampleFormControlInput1"
+          placeholder="Enter Amount">
+      </div>
+
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Premium for Age[30-40]:</label>
+        <input type="number" class="form-control" formControlName="slab2" id="exampleFormControlInput1"
+          placeholder="Enter Amount">
+      </div>
+
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Premium for Age[40-50]:</label>
+        <input type="number" class="form-control" formControlName="slab3" id="exampleFormControlInput1"
+          placeholder="Enter Amount">
+      </div>
+
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Premium for Age[50+]:</label>
+        <input type="number" class="form-control" formControlName="slab4" id="exampleFormControlInput1"
+          placeholder="Enter Amount">
+      </div>
+      <div class="mb-3 col-lg-6">
+        <label for="exampleFormControlInput1" class="form-label">Rate Of Interest:</label>
+        <input type="number" class="form-control" formControlName="rateOfInterest" id="exampleFormControlInput1"
+          placeholder="Enter in %">
+      </div>
+
+
+      <div class="mb-3">
+        <input type="submit" value="Add Policy" class="btn btn-primary" [disabled]="!policyForm.valid" />
+      </div>
+    </form>
+  </div>
+</div>

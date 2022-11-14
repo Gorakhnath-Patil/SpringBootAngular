@@ -1,0 +1,90 @@
+<div class="card">
+
+  <div class="card-header">
+
+    List of Your Policies
+
+  </div>
+
+  <div class="card-body">
+
+    <div class="alert alert-secondary" role="alert" *ngIf="msg">
+
+      {{msg}}
+
+    </div>
+
+    <div>
+
+      <button (click)="onSelectAll()" class="btn btn-primary btn-sm"><span class="btn-text"><b>Show
+            All</b></span></button>
+
+      &nbsp;
+
+      <button (click)="onSelect('PENDING')" class="btn btn-primary btn-sm"><span
+          class="btn-text"><b>PENDING</b></span></button>
+
+      &nbsp;
+
+      <button (click)="onSelect('APPROVED')" class="btn btn-primary btn-sm"><span
+          class="btn-text"><b>APPROVED</b></span></button>
+
+      &nbsp;
+
+      <button (click)="onSelect('DENIED')" class="btn btn-primary btn-sm"><span
+          class="btn-text"><b>DENIED</b></span></button>
+
+      &nbsp;
+
+    </div>
+
+    <!-- Example single danger button
+<div class="btn-group">
+  <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+   Action
+  </button>
+  <ul class="dropdown-menu">
+   <li><a class="dropdown-item" href="#">Action</a></li>
+   <li><a class="dropdown-item" href="#">Another action</a></li>
+   <li><a class="dropdown-item" href="#">Something else here</a></li>
+   <li><hr class="dropdown-divider"></li>
+   <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+ </div>
+   -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Initial Deposit</th>
+          <th scope="col">Status</th>
+          <th scope="col">Vendor Name</th>
+          <th scope="col">Archive</th>
+        </tr>
+      </thead>
+
+
+      <tbody class="table-group-divider">
+        <tr *ngFor="let p of policy;let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td> {{p.name}}</td>
+          <td> <b> {{p.category}} </b> </td>
+          <td> {{p.startDate}} </td>
+          <td> {{p.duration}}</td>
+          <td> {{p.initialDeposit}}</td>
+          <td> {{p.status}}</td>
+          <td></td>
+          <!-- <td> {{p.vendorName}}</td>-->
+          <td>
+            <button class="btn btn-secondary btn-sm">Archive</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
